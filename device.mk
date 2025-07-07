@@ -19,28 +19,32 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/boot/boot-image-profile.txt
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+DONT_DEXPREOPT_PREBUILTS := true
 USE_DEX2OAT_DEBUG := false
 WITH_DEXPREOPT_DEBUG_INFO := false
-DONT_DEXPREOPT_PREBUILTS := true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.systemuicompilerfilter=speed
+
+# Java Optimizations
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
 
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
 # Speed profile services and wifi-service to reduce RAM and storage
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
-# Preopt critical applications
+# Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Settings \
-    SystemUI
+    SystemUI \
+    Launcher3QuickStep \
+    SystemUIGoogle \
+    Settings
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
