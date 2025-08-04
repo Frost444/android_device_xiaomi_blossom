@@ -15,7 +15,6 @@ $(call inherit-product, device/xiaomi/blossom/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-TARGET_BOOT_ANIMATION_RES := 720
 TARGET_SUPPORTS_BLUR := false
 TARGET_ENABLE_BLUR := false
 
