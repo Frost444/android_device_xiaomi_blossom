@@ -26,6 +26,9 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
+# Reduce SystemServer Debug
+PRODUCT_SYSTEM_SERVER_DEBUG_INFO := false
+
 # Use a profile based boot image for this device. Note that this is currently a
 # generic profile and not Android Go optimized.
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
