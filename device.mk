@@ -41,9 +41,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     TrebuchetQuickStep
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    dalvik.vm.systemuicompilerfilter=speed
-
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
