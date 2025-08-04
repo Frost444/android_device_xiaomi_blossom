@@ -33,11 +33,6 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := \
     frameworks/base/config/boot-image-profile.txt \
     frameworks/base/config/boot-image-profile-extra.txt
 
-# Enable whole-program R8 Java optimizations for SystemUI and system_server,
-# but also allow explicit overriding for testing and development.
-SYSTEM_OPTIMIZE_JAVA ?= true
-SYSTEMUI_OPTIMIZE_JAVA ?= true
-
 # Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
